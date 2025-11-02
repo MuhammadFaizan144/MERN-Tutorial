@@ -1,6 +1,7 @@
 const home=async(req,res)=>{
     try{
 
+
     res.status(200).send('Welcome to router')
 
     }
@@ -11,10 +12,10 @@ const home=async(req,res)=>{
 
 const register=async(req,res)=>{
     try{
-        
-    res.status(200).send('welcome to registeration page by using page')
+    console.log(req.body)
+    res.status(200).json({message:req.body})
     }catch{
-    res.status(400).send({msg:'page not found'})
+    res.status(400).json('page not found')
     }
 }
 module.exports={home,register}
