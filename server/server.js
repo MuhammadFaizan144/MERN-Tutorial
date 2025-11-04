@@ -15,3 +15,5 @@ connectDb().then(()=>{
         console.log(`This server port http://localhost:${PORT}`)
     })
 })
+//npm i dotenv
+//npm i bcrypt

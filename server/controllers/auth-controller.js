@@ -1,4 +1,5 @@
 const User=require('../models/user-model')
+const bcrypt=require("bcrypt")
 const home=async(req,res)=>{
     try{
 
@@ -16,10 +17,14 @@ const register=async(req,res)=>{
     const {username,email,phone,password}=req.body
     const UserExist=await User.findOne({email})
 
-if(UserExist){
-    return res.status(400).json({msg:"email already exist"})
-}
-    const userCreated=await User.create({username,email,phone,password})
+    if(UserExist){
+        return res.status(400).json({msg:"email already exist"})
+    }
+    //hash the password
+    const saltRound=10
+    const hash_password=await bcrypt.hash(password,saltRound)
+
+    const userCreated=await User.create({username,email,phone,password:hash_password})
 
     res.status(200).json({msg:userCreated})
     }catch{
