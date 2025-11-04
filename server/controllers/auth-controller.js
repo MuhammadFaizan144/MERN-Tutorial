@@ -20,11 +20,16 @@ const register=async(req,res)=>{
     if(UserExist){
         return res.status(400).json({msg:"email already exist"})
     }
-    //hash the password
 
+    //generate token
     const userCreated=await User.create({username,email,phone,password})
 
-    res.status(200).json({msg:userCreated})
+    res.status(200).json({
+        msg:"registeration succesful",
+        token:await userCreated.generateToken(),
+        userId:userCreated._id.toString(),
+    })
+
     }catch{
     res.status(400).json('page not found')
     }
