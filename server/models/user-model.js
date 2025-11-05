@@ -40,7 +40,11 @@ userSchema.pre('save',async function(next){
         next(error)
     }
 })
-
+// compare the password
+userSchema.methods.comparePassword=async function (password) {
+    // console.log(this.password)
+    return bcrypt.compare(password,this.password)
+}
 
 //json web token
 userSchema.methods.generateToken=async function () {
@@ -50,9 +54,9 @@ userSchema.methods.generateToken=async function () {
             email:this.email,
             isAdmin:this.isAdmin,
         },
-    process.env.JWT_SECRET_KEY,{
+        process.env.JWT_SECRET_KEY,{
         expiresIn:"30d",
-    }
+        }
     )
     }catch(error){
         console.log(error)
