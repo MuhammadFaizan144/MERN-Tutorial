@@ -1,4 +1,4 @@
-const {z, email}=require('zod')
+const {z}=require('zod')
 //creating an object schema
 const sigupSchema=z.object({
     username:z
