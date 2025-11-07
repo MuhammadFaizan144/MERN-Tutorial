@@ -56,8 +56,9 @@ const login =async (req,res) => {
         }else{
             res.status(401).json({msg:"Invalid email or password"})
         }
-    }catch{
+    }catch(error){
         res.status(500).json("internal server error")
+        // next(error)
     }
 }
 module.exports={home,register,login}
