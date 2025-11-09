@@ -6,11 +6,12 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Service from './pages/Service'
-
+import Navbar from './Components/Navbar'
 const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
