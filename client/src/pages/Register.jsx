@@ -20,6 +20,11 @@ const Register = () => {
     })
   }
 
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    console.log(user)
+  }
+
   return (
     <>
       <section>
@@ -32,7 +37,7 @@ const Register = () => {
               <div className="registration-form">
                 <h1 className='main-heading mb-3'>registeration form</h1>
                 <br />
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="username">username</label>
                     <input type="text" name='username' placeholder='username' id='username' required autoComplete='off' value={user.username} onChange={handleInput}/>
