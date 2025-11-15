@@ -3,7 +3,7 @@ import { useState } from 'react';
 const Register = () => {
 
   const[user,setUser]=useState({
-    username:"thapa",
+    username:"",
     email:"",
     phone:"",
     password:""
@@ -32,7 +32,7 @@ const Register = () => {
           <div className="section-registration">
             <div className="container grid grid-cols-2">
               <div className="registeration-image">
-                <img src="/images/register.png" alt="" width="500" height="500" />
+                <img src="/images/login.png" alt="let fill the login" width="500" height="500" />
               </div>
               <div className="registration-form">
                 <h1 className='main-heading mb-3'>registeration form</h1>

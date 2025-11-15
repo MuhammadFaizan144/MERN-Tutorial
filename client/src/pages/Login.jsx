@@ -1,27 +1,23 @@
 import React from 'react'
 import { useState } from 'react'
 const Login = () => {
-  const[user,setUser]=useState({
-      email:"",
+    const[user,setuser]=useState({
+      email:"h",
       password:""
     })
-    //handling the input value
     const handleInput=(e)=>{
-      // let name=e.
       console.log(e)
-      let name=e.target.name;
-      let value=e.target.value;
-      setUser({
+      let name=e.target.name
+      let value=e.target.value
+      setuser({
         ...user,
-        [name]:value,
+        [name]:value
       })
     }
-  
     const handleSubmit=(e)=>{
       e.preventDefault()
-      console.log(user)
+      console.log(e)
     }
-  
     return (
       <>
         <section>
