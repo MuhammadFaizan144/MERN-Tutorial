@@ -69,3 +69,12 @@ li {
   padding: 4rem 2.4rem;
   margin: 0 auto;
 }
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
