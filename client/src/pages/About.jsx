@@ -7,8 +7,8 @@ const About = () => {
         <section className="section-hero">
           <div className="container grid grid-two-cols">
             <div className="hero-content">
-              <p>We are the World Best IT Company</p>
-              <h1>Welcome to Thapa Technical</h1>
+              <p>Welcome. Thapa Technical</p>
+              <h1>Why Choose Us?</h1>
               <p>
                 Expertise. Our team consists of experienced IT professionals who are passionate about staying up-to-date with the latest industry trends.
               </p>
