@@ -10,11 +10,13 @@ const About = () => {
               <p>We are the World Best IT Company</p>
               <h1>Welcome to Thapa Technical</h1>
               <p>
-                Are you ready to take your business to the next level with
-                cutting-edge IT solutions? Look no further! At Thapa Technical,
-                we specialize in providing innovative IT services and solutions
-                tailored to meet your unique needs.
+                Expertise. Our team consists of experienced IT professionals who are passionate about staying up-to-date with the latest industry trends.
               </p>
+              <p>Customization. We understand that every bussiness is unique. That's why we create solutions that are tailored to your specific needs and goals.
+              </p>
+              <p>Customer-Centric Approach: We prioritize your satisfaction and provide top-notch support to address your IT concerns</p>
+              <p>Affordability: We offer competitive pricing without compromsing on the quality of our services.</p>
+              <p>Reliability: Count on us to be there when you need us. We're committed to ensuring your IT environment is reliable and available 24/7.</p>
               <div className="btn btn-group">
                 <a href="/contact">
                   <button className="btn">connect now</button>
@@ -58,6 +60,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      <footer>
+        <p>@thapatechical 2024</p>
+      </footer>
   </>
 )
 }
