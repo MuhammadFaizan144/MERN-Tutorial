@@ -100,6 +100,12 @@ button {
   -ms-transition: border-color 0.3s;
   -o-transition: border-color 0.3s;
 }
+.secondary-btn{
+  background: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+/* state rules */
 button:hover{
   box-shadow: inset 0 0 0 0.2rem var(--bg-color);
 }
@@ -133,5 +139,7 @@ a:active{
     }
   }
 }
+.secondary-btn{
 
+}
 /***** End Hero  *****/
