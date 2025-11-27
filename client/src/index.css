@@ -127,7 +127,7 @@ button {
     display: flex;
     justify-content: center;
     & img {
-      width: 70%;
+      width: 100%;
       height: auto;
     }
   }
@@ -151,7 +151,8 @@ button {
     & .div1 {
       text-align: center;
       border-right: 0.2rem solid var(--dark-color);
-
+      padding-right: 5rem;
+      margin-left: 5rem;
       &:last-child {
         border: none;
       }
