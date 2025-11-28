@@ -214,7 +214,7 @@ footer{
 
     & input,
     textarea {
-      width: 80%;
+      width: 180%;
       padding: 0.4rem 0.6rem;
     }
   }
