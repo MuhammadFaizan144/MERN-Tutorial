@@ -7,6 +7,7 @@ const Contact = () => {
     message:"",
   });
   const handleInput=(e)=>{
+    // console.log(e)
     const name=e.target.name;
     const value=e.target.value;
     setContact({
@@ -19,9 +20,13 @@ const Contact = () => {
     //   [name]:value,
     // }));
   };
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(contact)
+  }
   return (
     <>
-      <section className='section-contect'>
+      <section className='section-contact'>
         <div className="contact-content container">
           <h1 className='main-heading'>contact us</h1>
         </div>
@@ -32,7 +37,7 @@ const Contact = () => {
           </div>
           {/* contact form content actual */}
           <div className="section-form">
-            <form >
+            <form onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="username">
                     username
