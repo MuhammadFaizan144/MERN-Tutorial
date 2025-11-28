@@ -28,7 +28,7 @@ const Login = () => {
                   <img src="/images/register.png" alt="" width="500" height="500" />
                 </div>
                 <div className="registration-form">
-                  <h1 className='main-heading mb-3'>registeration form</h1>
+                  <h1 className='main-heading mb-3'>login form</h1>
                   <br />
                   <form onSubmit={handleSubmit}>
                     
