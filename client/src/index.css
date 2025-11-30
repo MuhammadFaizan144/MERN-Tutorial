@@ -233,6 +233,7 @@ a.active {
 
 /* pseduo elements  */
 .main-heading {
+  width: 50rem;
   position: relative;
   text-transform: capitalize;
 
@@ -241,7 +242,7 @@ a.active {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50%;
+    width: 60%;
     height: 0.5rem;
     background-color: var(--btn-color);
   }
