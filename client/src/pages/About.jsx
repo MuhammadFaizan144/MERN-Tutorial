@@ -42,9 +42,6 @@ const About = () => {
       </main>
       {/* second section */}
       <Analytics/>
-      <footer>
-        <p>@thapatechical 2024</p>
-      </footer>
   </>
 )
 }

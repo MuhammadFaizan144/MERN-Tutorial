@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Service from './pages/Service'
 import Navbar from './Components/Navbar'
 import Error from './pages/error'
+import Footer from './Components/Footer/Footer'
 const App = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='*' element={<Error/>}/>
         </Routes>
+      <Footer/>
       </BrowserRouter>
     </>
   )

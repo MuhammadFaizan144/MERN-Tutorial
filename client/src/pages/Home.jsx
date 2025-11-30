@@ -72,9 +72,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer>
-        <p>@thapatechical 2024</p>
-      </footer>
     </>
   )
 }

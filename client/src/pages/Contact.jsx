@@ -69,9 +69,6 @@ const Contact = () => {
           ></iframe>
         </section>
       </section>
-      <footer>
-        <p>@thapatechical 2024</p>
-      </footer>
     </>
   )
 }

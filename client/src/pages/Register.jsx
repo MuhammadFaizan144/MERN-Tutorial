@@ -62,6 +62,7 @@ const Register = () => {
           </div>
         </main>
       </section>
+      
     </>
   );
 
