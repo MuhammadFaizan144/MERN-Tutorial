@@ -166,7 +166,7 @@ button {
   }
 }
 footer{
-  position: fixed;
+  position: relative;
   padding: 3.2rem;
   text-align: center;
   bottom: 0;
