@@ -8,7 +8,12 @@ const connectDb=require('./utils/db')
 const errorMiddleware = require('./middleware/error-middleware')
 
 // lets tackle cors
-app.use(cors)
+const corsOption={
+    origin:"http://localhost:5173",
+    methods:"GET, POST, PUT, DELETE, PATCH, HEAD",
+    credentials:true,
+}
+app.use(cors(corsOption))
 
 app.use(express.json())//middleware
 
