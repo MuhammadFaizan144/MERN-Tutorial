@@ -20,16 +20,21 @@ const Register = () => {
     })
   }
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault()
     console.log(user)
-    const respones=fetch(`http://localhost:3000/api/auth/register`,{
+    try {
+      const respones=await fetch(`http://localhost:3000/api/auth/register`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
       },
       body:JSON.stringify(user),
     })
+    } catch (error) {
+      console.log("register: ",error)
+    }
+    
   }
 
   return (
