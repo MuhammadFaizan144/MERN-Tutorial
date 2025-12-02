@@ -34,12 +34,17 @@ const Register = () => {
       body:JSON.stringify(user),
     })
     if (response.ok) {
+      //receiving token
+      const res_data=await response.json()
+      console.log("res from server ",res_data)
+
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/login")
         
       } else {
         console.log("error inside response ", "error");
       }
+      console.log(response)
     } catch (error) {
       console.log("register: ",error)
     }

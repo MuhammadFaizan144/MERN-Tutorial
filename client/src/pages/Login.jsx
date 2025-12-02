@@ -33,7 +33,7 @@ const Login = () => {
       if (response.ok) {
         alert("Login successful")
           setUser({email:"",password:""})
-          
+          navigate("/")
         }else{
           console.log("Error in response")
         }
