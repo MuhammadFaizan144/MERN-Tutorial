@@ -22,6 +22,7 @@ const Login = () => {
       console.log(user)
       try{
         const response=await fetch(URL,{
+        
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -31,6 +32,14 @@ const Login = () => {
       })
       console.log("login form", response)
       if (response.ok) {
+        
+        //receiving token
+        const res_data=await response.json()
+
+        //stored the token in localhost
+        // storetokenInLS(res_data.token)
+        localStorage.setItem("token",res_data.token)
+      
         alert("Login successful")
           setUser({email:"",password:""})
           navigate("/")
