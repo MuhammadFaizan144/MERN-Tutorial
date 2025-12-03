@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../store/auth'
 const URL='http://localhost:3000/api/auth/login'
 const Login = () => {
     const[user,setUser]=useState({
@@ -8,6 +9,8 @@ const Login = () => {
       password:""
     })
     const navigate=useNavigate()
+    const storetokenInLS=useAuth()
+
     const handleInput=(e)=>{
       console.log(e)
       let name=e.target.name

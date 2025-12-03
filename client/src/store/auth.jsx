@@ -10,7 +10,6 @@ export const AuthProvider=({children})=>{
     </AuthContext.Provider>)
 }
 
-<<<<<<< HEAD
 export const useAuth=()=>{
     const AuthContextValue=useContext(AuthContext)
     if (!AuthContextValue){
@@ -18,5 +17,3 @@ export const useAuth=()=>{
     }
     return AuthContextValue;
 }
-=======
->>>>>>> 986ab2f878725de3068bb6ef98820810e27b8c64
