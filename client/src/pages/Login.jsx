@@ -37,7 +37,7 @@ const Login = () => {
         const res_data=await response.json()
 
         //stored the token in localhost
-        // storetokenInLS(res_data.token)
+        storetokenInLS(res_data.token)
         localStorage.setItem("token",res_data.token)
       
         alert("Login successful")
