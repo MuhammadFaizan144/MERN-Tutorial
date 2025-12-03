@@ -39,7 +39,6 @@ const Register = () => {
       console.log("res from server ",res_data)
       //stored the token in localhost
       storetokenInLS(res_data.token)
-      localStorage.setItem("token",res_data)
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/login")
         

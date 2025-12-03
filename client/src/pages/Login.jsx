@@ -38,7 +38,6 @@ const Login = () => {
 
         //stored the token in localhost
         storetokenInLS(res_data.token)
-        localStorage.setItem("token",res_data.token)
       
         alert("Login successful")
           setUser({email:"",password:""})
