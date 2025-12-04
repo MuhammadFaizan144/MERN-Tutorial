@@ -5,7 +5,7 @@ export const AuthProvider=({children})=>{
     const [token,settoken]=useState(localStorage.getItem("token"))
 
     const storetokenInLS=(serverToken)=>{
-        return localStorage.setItem('token',serverToken)
+        return localStorage.setItem("token",serverToken)
     }
 
     //logout functionality
@@ -14,8 +14,8 @@ export const AuthProvider=({children})=>{
         return localStorage.removeItem("token")
     }
 
-
-    return (<AuthContext.Provider value={storetokenInLS}>
+    return (
+    <AuthContext.Provider value={storetokenInLS}>
         {children}
     </AuthContext.Provider>)
 }
