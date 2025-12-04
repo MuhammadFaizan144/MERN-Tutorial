@@ -8,6 +8,9 @@ export const AuthProvider=({children})=>{
         return localStorage.setItem("token",serverToken)
     }
 
+    let isLoggedIn=!!token
+    console.log('Is logged In ',isLoggedIn)
+
     //logout functionality
     const LogoutUser=()=>{
         settoken("")
@@ -15,7 +18,7 @@ export const AuthProvider=({children})=>{
     }
 
     return (
-    <AuthContext.Provider value={storetokenInLS}>
+    <AuthContext.Provider value={{isLoggedIn,storetokenInLS,LogoutUser}}>
         {children}
     </AuthContext.Provider>)
 }

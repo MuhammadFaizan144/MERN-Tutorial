@@ -11,7 +11,7 @@ const Register = () => {
     password:""
   })
   const navigate=useNavigate()
-  const storetokenInLS=useAuth()
+  const {storetokenInLS}=useAuth()
   //handling the input value
   const handleInput=(e)=>{
     // let name=e.

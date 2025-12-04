@@ -9,7 +9,7 @@ const Login = () => {
       password:""
     })
     const navigate=useNavigate()
-    const storetokenInLS=useAuth()
+    const {storetokenInLS}=useAuth()
 
     const handleInput=(e)=>{
       console.log(e)
@@ -75,7 +75,7 @@ const Login = () => {
                       <input type="password" name='password' placeholder='password' id='password' required autoComplete='off' value={user.password} onChange={handleInput}/>
                     </div>
                     <br />
-                    <button type='submit' className='btn btn-submit'>Register Now</button>
+                    <button type='submit' className='btn btn-submit'>Log in</button>
                   </form>
                 </div>
               </div>
