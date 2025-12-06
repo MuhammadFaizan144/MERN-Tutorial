@@ -3,28 +3,14 @@ import Analytics from '../Components/Analytics'
 import { useState } from 'react'
 import { useAuth } from '../store/auth';
 const About = () => {
-  const[about,setAbout]=useState({
-      username:"",
-      email:"",
-      message:"",
-    });
-  const [userData, setUserData] = useState(true)
-    const {user}=useAuth()
-  
-    if(userData && user){
-      setAbout({
-        username:user.username,
-      })
-  
-      setUserData(false)
-    }
+  const {user}=useAuth()
   return (
     <>
     <main>
         <section className="section-hero">
           <div className="container grid grid-two-cols">
             <div className="hero-content">
-              <p>Hii. {user.username}</p>
+              <p>Welcome, {user?`${user.username} to our website`:`to our website`}</p>
               <h1>Why Choose Us?</h1>
               <p>
                 Expertise. Our team consists of experienced IT professionals who are passionate about staying up-to-date with the latest industry trends.
