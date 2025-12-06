@@ -1,14 +1,30 @@
 import React from 'react'
 import Analytics from '../Components/Analytics'
-
+import { useState } from 'react'
+import { useAuth } from '../store/auth';
 const About = () => {
+  const[about,setAbout]=useState({
+      username:"",
+      email:"",
+      message:"",
+    });
+  const [userData, setUserData] = useState(true)
+    const {user}=useAuth()
+  
+    if(userData && user){
+      setAbout({
+        username:user.username,
+      })
+  
+      setUserData(false)
+    }
   return (
     <>
     <main>
         <section className="section-hero">
           <div className="container grid grid-two-cols">
             <div className="hero-content">
-              <p>Welcome. Thapa Technical</p>
+              <p>Hii. {user.username}</p>
               <h1>Why Choose Us?</h1>
               <p>
                 Expertise. Our team consists of experienced IT professionals who are passionate about staying up-to-date with the latest industry trends.
