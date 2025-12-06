@@ -8,5 +8,9 @@ const authMiddlerware=require('../middleware/auth-middlerware')
 router.route("/").get(authcontrollers.home)//get data
 router.route("/register").post(validate(sigupSchema),authcontrollers.register)//insert data
 router.route("/login").post(authcontrollers.login)
+<<<<<<< HEAD
 router.route("/user").get(authMiddlerware, authcontrollers.user)
+=======
+router.route("/user").get(authcontrollers.user)
+>>>>>>> a25505ff6afc1dba5435ef56779e00e8ac0b0242
 module.exports=router

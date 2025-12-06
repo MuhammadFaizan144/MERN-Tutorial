@@ -61,6 +61,7 @@ const login =async (req,res) => {
         // next(error)
     }
 }
+<<<<<<< HEAD
 
 //to send user data --User Logic
 const user=async (req,res) => {
@@ -69,6 +70,15 @@ const user=async (req,res) => {
         console.log(userData)
         // res.status(200).json({msg:"hi user"})
         return res.status(200).json({msg:userData})
+=======
+//to send user data --User Logic
+const user=async (req,res) => {
+    try {
+        // const userData=req.user;
+        // console.log(userData)
+        res.status(200).json({msg:"hi user"})
+
+>>>>>>> a25505ff6afc1dba5435ef56779e00e8ac0b0242
     } catch (error) {
         console.log(`error from the user route ${error}`)
     }
