@@ -8,4 +8,5 @@ router.route("/").get(authcontrollers.home)//get data
 
 router.route("/register").post(validate(sigupSchema),authcontrollers.register)//insert data
 router.route("/login").post(authcontrollers.login)
+router.route("/user").get(authcontrollers.user)
 module.exports=router
