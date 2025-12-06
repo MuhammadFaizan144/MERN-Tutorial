@@ -12,12 +12,12 @@ const authMiddlerware=async(req,res,next)=>{
     console.log('token from auth middleware',jwtToken)
     try {
         const isVarified=jwt.verify(jwtToken,process.env.JWT_SECRET_KEY)
-        const userData=await User.findOne({email:isVarified.email}).select({password:0})
+        const userData=await User.findOne({email:isVarified.email}).select({password:0,})
         console.log(userData)
-        
+
         req.user=userData
         req.token=token
-        req.user=userData._id
+        req.userID=userData._id
         next()
     } catch (error) {
         return res.status(401).json({message:"Unauthorized. Invalid token."})
