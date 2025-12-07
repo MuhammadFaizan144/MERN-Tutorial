@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { useAuth } from '../store/auth';
-const Contact = () => {
-  const[contact,setContact]=useState({
-    username:"",
+const defaultcontactFormData={
+  username:"",
     email:"",
     message:"",
-  });
+}
+const Contact = () => {
+  const[contact,setContact]=useState(defaultcontactFormData);
   const [userData, setUserData] = useState(true)
   const {user}=useAuth()
 
@@ -34,9 +35,27 @@ const Contact = () => {
     //   [name]:value,
     // }));
   };
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    console.log(contact)
+    try{
+      
+        const response=await fetch("http://localhost:3000/api/form/contact",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(user)
+      })
+      if(response.ok){
+        setContact(defaultcontactFormData)
+        const data=await response.json()
+        console.log(data)
+        alert("Message send successfully")
+      }
+    }catch(error){
+      alert("Message not send")
+      console.log("contact connection error with backend",error)
+    }
   }
   return (
     <>
