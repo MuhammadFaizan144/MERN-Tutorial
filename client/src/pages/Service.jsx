@@ -2,7 +2,26 @@ import React from 'react'
 
 const Service = () => {
   return (
-    <div>Service</div>
+    <section className='section-services'>
+      <div className="container">
+        <h1 className='main-heading'>Services</h1>
+      </div>
+      <div className="container grid grid-three-cols">
+        <div className="card">
+          <div className="card-img">
+            <img src="/images/design.png" alt="our services info" width="200"/>
+          </div>
+          <div className="card-details">
+            <div className="gird grid-two-cols">
+              <p>provider</p>
+              <p>price</p>
+            </div>
+            <h2>service</h2>
+            <p>description</p>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
