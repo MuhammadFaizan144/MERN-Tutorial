@@ -4,6 +4,7 @@ export const AuthProvider=({children})=>{
 
     const [token,settoken]=useState(localStorage.getItem("token"))
     const [user,setUser]=useState("")
+    const [services, setServices] = useState("")
     const storetokenInLS=(serverToken)=>{
         return localStorage.setItem("token",serverToken)
     }
@@ -44,6 +45,7 @@ export const AuthProvider=({children})=>{
             if(response.ok){
                 const data=await response.json()
                 console.log(data.msg)
+                setServices(data.msg)
             }
         } catch (error) {
             console.log(`services frontend error ${error}`)
@@ -57,7 +59,7 @@ export const AuthProvider=({children})=>{
     
 
     return (
-    <AuthContext.Provider value={{isLoggedIn,storetokenInLS,LogoutUser,user}}>
+    <AuthContext.Provider value={{isLoggedIn,storetokenInLS,LogoutUser,user,services}}>
         {children}
     </AuthContext.Provider>)
 }
