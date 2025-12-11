@@ -34,10 +34,10 @@ const Login = () => {
         
       })
       console.log("login form", response)
+      const res_data=await response.json()
       if (response.ok) {
         
         //receiving token
-        const res_data=await response.json()
 
         //stored the token in localhost
         storetokenInLS(res_data.token)
@@ -46,6 +46,7 @@ const Login = () => {
           setUser({email:"",password:""})
           navigate("/")
         }else{
+        alert(res_data.extraDetails?res_data.extraDetails:res_data.message);
           console.log("Error in response")
         }
       }catch(error){
