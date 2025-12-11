@@ -16,7 +16,7 @@ const register=async(req,res)=>{
     const UserExist=await User.findOne({email})
 
     if(UserExist){
-        return res.status(400).json({msg:"email already exist"})
+        return res.status(400).json({message:"email already exist"})
     }
 
     //generate token
@@ -41,7 +41,7 @@ const login =async (req,res) => {
         console.log(UserExist);
         
         if(!UserExist){
-            return res.status(400).json({message:"Invalid"})
+            return res.status(400).json({message:"email already exist"})
         }
         // const user=await bcrypt.compare(password,UserExist.password)
         const user=await UserExist.comparePassword(password)
