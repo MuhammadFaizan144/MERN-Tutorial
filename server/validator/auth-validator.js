@@ -20,7 +20,7 @@ const sigupSchema = z.object({
         .max(20, { message: "phone must name not be more than 20 character" }),
     password: z.
         string({ required_error: "password is required" })
-        .min(3, { message: "password must be at least 3 character" })
+        .min(6, { message: "password must be at least 6 character" })
         .max(255, { message: "password must name not be more than 255 character" }),
 })
 module.exports = sigupSchema

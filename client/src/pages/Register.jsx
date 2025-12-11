@@ -35,17 +35,17 @@ const Register = () => {
       },
       body:JSON.stringify(user),
     })
+    const res_data=await response.json()
+    console.log("res from server ",res_data.extraDetails)
     if (response.ok) {
       //receiving token
-      const res_data=await response.json()
-      console.log("res from server ",res_data)
       //stored the token in localhost
       storetokenInLS(res_data.token)
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/login")
         
       } else {
-        console.log("error inside response ", "error");
+        alert(res_data.extraDetails?res_data.extraDetails:res_data.message);
       }
       console.log(response)
     } catch (error) {
