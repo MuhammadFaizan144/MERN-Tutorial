@@ -44,7 +44,7 @@ const Login = () => {
         //stored the token in localhost
         storetokenInLS(res_data.token)
       
-        alert("Login successful")
+        toast.success("Login Successful")
           setUser({email:"",password:""})
           navigate("/")
         }else{
