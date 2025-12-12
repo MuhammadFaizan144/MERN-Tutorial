@@ -11,6 +11,8 @@
 }
 
 :root {
+    --toastify-toast-padding: 14px;
+
   --bg-color: #f4f3ff;
   --btn-color: #646cff;
   --dark-color: #242424;
@@ -448,4 +450,9 @@ a.active {
       }
     }
   }
+}
+
+/* React-Toastify */
+.toastBody{
+  font-size: 17px;
 }
