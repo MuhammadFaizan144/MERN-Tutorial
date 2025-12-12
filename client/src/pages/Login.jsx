@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../store/auth'
 import { toast } from 'react-toastify'
+// import 'react-toastify/ReactToastify.css' not necessary now
 const URL='http://localhost:3000/api/auth/login'
 const Login = () => {
     const[user,setUser]=useState({
@@ -47,7 +48,7 @@ const Login = () => {
           setUser({email:"",password:""})
           navigate("/")
         }else{
-        toast(res_data.extraDetails?res_data.extraDetails:res_data.message);
+        toast.error(res_data.extraDetails?res_data.extraDetails:res_data.message);
           console.log("Error in response")
         }
       }catch(error){
