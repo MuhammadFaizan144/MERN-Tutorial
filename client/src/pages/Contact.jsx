@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { toast } from 'react-toastify';
 import { useAuth } from '../store/auth';
 const defaultcontactFormData={
   username:"",
@@ -50,10 +51,10 @@ const Contact = () => {
         setContact(defaultcontactFormData)
         const data=await response.json()
         console.log(data)
-        alert("Message send successfully")
+        toast.success("Message send successfully")
       }
     }catch(error){
-      alert("Message not send")
+      toast.error("Message not send")
       console.log("contact connection error with backend",error)
     }
   }
