@@ -18,6 +18,7 @@ const getAllUsers=async (req,res) => {
 const getAllContacts=async (req,res) => {
     try {
         const contacts=await Contact.find()
+        console.log(contacts)
         if(!contacts||contacts.length===0){
             return res.status(404).json({message:"No Users Found"})
         }

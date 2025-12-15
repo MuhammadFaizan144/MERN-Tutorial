@@ -1,4 +1,4 @@
-const getAllUsers = require("../controllers/admin-controller")
+const {getAllUsers,getAllContacts} = require("../controllers/admin-controller")
 
 const express=require("express")
 const router=express.Router()
