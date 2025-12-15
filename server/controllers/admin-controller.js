@@ -1,4 +1,6 @@
 const User=require('../models/user-model')
+// getAllUsers Logic
+
 const getAllUsers=async (req,res) => {
     try {
         const users=await User.find({},{password:0})
@@ -11,4 +13,12 @@ const getAllUsers=async (req,res) => {
         next(error)
     }
 }
-module.exports=getAllUsers;
+// getAllContacts Logic
+const getAllContacts=async (req,res) => {
+    try {
+        const contacts=await
+    } catch (error) {
+        next(error)
+    }
+}
+module.exports={getAllUsers,getAllContacts};
