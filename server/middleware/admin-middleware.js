@@ -1,7 +1,13 @@
 const adminMiddleware=async (req,res,next) => {
     try {
         console.log(req.user)
-        res.status(200).json({msg:req.user.isAdmin})
+        const adminRole=req.user.isAdmin
+        if(!adminRole){
+            return res.status(400).json({msg:"Access denied. User is not an admin"})
+        }
+        // res.status(200).json({msg:req.user.isAdmin})
+        //if user is an admin it proceed to the next middleware
+        next()
     } catch (error) {
         next(error)
     }
