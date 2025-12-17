@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaHome, FaRegListAlt, FaUser } from "react-icons/fa";
+import {FaMessage} from "react-icons/fa6"
 import { NavLink, Outlet } from 'react-router-dom'
 const AdminLayouts = () => {
   return (<>
@@ -6,10 +8,10 @@ const AdminLayouts = () => {
         <div className="container">
             <nav>
                 <ul>
-                    <li><NavLink to="/admin/users">users</NavLink></li>
-                    <li><NavLink to="/admin/contacts">contacts</NavLink></li>
-                    <li><NavLink to="/service">services</NavLink></li>
-                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/admin/users"><FaUser/> users</NavLink></li>
+                    <li><NavLink to="/admin/contacts"><FaMessage/> contacts</NavLink></li>
+                    <li><NavLink to="/service"><FaRegListAlt/> services</NavLink></li>
+                    <li><NavLink to="/"><FaHome/> Home</NavLink></li>
                 </ul>
             </nav>
         </div>
