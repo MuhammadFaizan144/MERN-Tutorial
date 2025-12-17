@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar'
 import Error from './pages/error'
 import Footer from './Components/Footer/Footer'
 import Logout from './pages/Logout'
+import AdminLayouts from './Components/layouts/Admin-Layouts'
 const App = () => {
   return (
     <>
@@ -24,6 +25,11 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/logout' element={<Logout/>}/>
           <Route path='*' element={<Error/>}/>
+          {/* nested route */}
+          <Route path='/admin' element={<AdminLayouts/>}>
+            <Route path='users' element={<AdminUsers/>}/>
+            <Route path='contact' element={<AdminContacts/>}/>
+          </Route>
         </Routes>
       <Footer/>
       </BrowserRouter>
