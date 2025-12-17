@@ -2,7 +2,18 @@ import React from 'react'
 
 const AdminLayouts = () => {
   return (
-    <div>Admin-Layouts</div>
+    <header>
+        <div className="container">
+            <nav>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
   )
 }
 

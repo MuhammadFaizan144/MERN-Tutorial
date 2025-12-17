@@ -11,6 +11,8 @@ import Error from './pages/error'
 import Footer from './Components/Footer/Footer'
 import Logout from './pages/Logout'
 import AdminLayouts from './Components/layouts/Admin-Layouts'
+import AdminUsers from './pages/Admin-Users'
+import AdminContacts from './pages/Admin-Contacts'
 const App = () => {
   return (
     <>
@@ -28,7 +30,7 @@ const App = () => {
           {/* nested route */}
           <Route path='/admin' element={<AdminLayouts/>}>
             <Route path='users' element={<AdminUsers/>}/>
-            <Route path='contact' element={<AdminContacts/>}/>
+            <Route path='contacts' element={<AdminContacts/>}/>
           </Route>
         </Routes>
       <Footer/>
