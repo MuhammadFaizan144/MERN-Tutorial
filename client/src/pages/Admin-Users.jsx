@@ -14,7 +14,7 @@ const AdminUsers = () => {
             });
 
             const data = await response.json()
-            console.log(`user ${data}`)
+            console.log("users:", data)
             setUsers(data);
         } catch (error) {
             console.log(error)
@@ -24,9 +24,39 @@ const AdminUsers = () => {
         getAllUsersData()
     }, [])
     return (
-        <>{users.map((curUser, index) => {
-            return <h2 key={index}>{curUser.email}</h2>
-        })}</>
+        <>
+            <section>
+                <div className="container">
+                    <h1>Admin Users data</h1>
+                </div>
+                <div className="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map((curUser, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{curUser.username}</td>
+                                        <td>{curUser.email}</td>
+                                        <td>{curUser.phone}</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </>
     )
 }
 
