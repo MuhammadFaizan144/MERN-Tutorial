@@ -37,4 +37,4 @@ const deleteUserById=async (req,res) => {
         next(error)
     }
 }
-module.exports={getAllUsers,getAllContacts};
+module.exports={getAllUsers,getAllContacts,deleteUserById};
