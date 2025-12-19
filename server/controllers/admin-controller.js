@@ -28,4 +28,5 @@ const getAllContacts=async (req,res) => {
         next(error)
     }
 }
+
 module.exports={getAllUsers,getAllContacts};

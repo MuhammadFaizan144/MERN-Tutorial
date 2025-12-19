@@ -20,6 +20,9 @@ const AdminUsers = () => {
             console.log(error)
         }
     }
+    const deleteUser=(id)=>{
+        console.log(id)
+    }
     useEffect(() => {
         getAllUsersData()
     }, [])
