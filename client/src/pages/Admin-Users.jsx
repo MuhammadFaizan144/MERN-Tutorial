@@ -20,13 +20,23 @@ const AdminUsers = () => {
             console.log(error)
         }
     }
-    const deleteUser=(id)=>{
+    const deleteUser=async(id)=>{
+        try {
+            
+        
         const response = await fetch(`http://localhost:3000/api/admin/users/delete/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: authorizationToken
                 }
-            });
+            }
+        );
+            const data=await response.json()
+            console.log("users after delete", data)
+            setUsers(data);
+        } catch (error) {
+            console.log(error)
+        }
     }
     useEffect(() => {
         getAllUsersData()
