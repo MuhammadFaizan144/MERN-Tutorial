@@ -28,6 +28,7 @@ const getAllContacts=async (req,res) => {
         next(error)
     }
 }
+//delete user by id logic
 const deleteUserById=async (req,res) => {
     try {
         const id=req.params.id
