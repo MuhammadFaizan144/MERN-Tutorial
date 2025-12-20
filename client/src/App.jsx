@@ -31,6 +31,7 @@ const App = () => {
           <Route path='/admin' element={<AdminLayouts/>}>
             <Route path='users' element={<AdminUsers/>}/>
             <Route path='contacts' element={<AdminContacts/>}/>
+            {/* <Route path='edit' element={<AdminContacts/>}/> */}
           </Route>
         </Routes>
       <Footer/>
