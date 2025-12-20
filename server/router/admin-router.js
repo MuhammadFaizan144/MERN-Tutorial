@@ -1,4 +1,4 @@
-const {getAllUsers,getAllContacts,deleteUserById} = require("../controllers/admin-controller")
+const {getAllUsers,getAllContacts,deleteUserById,getUsersById} = require("../controllers/admin-controller")
 const adminMiddleware = require("../middleware/admin-middleware")
 const authMiddlerware=require('../middleware/auth-middlerware')
 
