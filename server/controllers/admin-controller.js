@@ -30,6 +30,8 @@ const updateUserById=async (req,res) => {
     try {
         const id=req.params.id
         const updateUserData=req.body
+        const updateData=await User.updateOne({_id:id},{$set:updateUserData})
+        return res.status(200).json({updateData})
     }catch (error) {
         next(error)
     }
@@ -58,4 +60,4 @@ const getAllContacts=async (req,res) => {
         next(error)
     }
 }
-module.exports={getAllUsers,getAllContacts,deleteUserById,getUsersById};
+module.exports={getAllUsers,getAllContacts,deleteUserById,getUsersById,updateUserById};
