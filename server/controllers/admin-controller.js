@@ -25,7 +25,15 @@ const getUsersById=async (req,res) => {
         next(error)
     }
 }
-
+//user update logic
+const updateUserById=async (req,res) => {
+    try {
+        const id=req.params.id
+        const updateUserData=req.body
+    }catch (error) {
+        next(error)
+    }
+}
 //delete user by id logic
 const deleteUserById=async (req,res) => {
     try {
