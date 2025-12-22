@@ -13,6 +13,7 @@ import Logout from './pages/Logout'
 import AdminLayouts from './Components/layouts/Admin-Layouts'
 import AdminUsers from './pages/Admin-Users'
 import AdminContacts from './pages/Admin-Contacts'
+import  AdminUpdate from './pages/Admin-Update'
 const App = () => {
   return (
     <>
@@ -31,7 +32,7 @@ const App = () => {
           <Route path='/admin' element={<AdminLayouts/>}>
             <Route path='users' element={<AdminUsers/>}/>
             <Route path='contacts' element={<AdminContacts/>}/>
-            {/* <Route path='edit' element={<AdminContacts/>}/> */}
+            <Route path='users/:id/edit' element={<AdminUpdate/>}/>
           </Route>
         </Routes>
       <Footer/>
