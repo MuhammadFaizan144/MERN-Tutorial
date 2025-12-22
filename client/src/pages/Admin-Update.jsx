@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../store/auth";
+import { toast } from "react-toastify";
 
 export const AdminUpdate = () => {
     const [data, setData] = useState({
@@ -48,13 +49,19 @@ export const AdminUpdate = () => {
 
         try {
             const response=await fetch(`http://localhost:3000/api/admin/users/update/${params.id}`,{
-                method:"DELETE",
+                method:"PATCH",
                 headers:{
                     Authorization:authorizationToken,
                 },
                 body:JSON.stringify(data),
             })
-        )    
+            if(response.ok){
+                toast.success("User Updated Successfully")
+
+            }else{
+                toast.error("Not updating user")
+            }
+
         } catch (error) {
             console.log(error)
         }
