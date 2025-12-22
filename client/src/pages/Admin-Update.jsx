@@ -20,6 +20,7 @@ export const AdminUpdate = () => {
             const response = await fetch(`http://localhost:3000/api/admin/users/${params.id}`, {
                 method: "GET",
                 headers: {
+                    
                     Authorization: authorizationToken,
                 },
             });
@@ -51,6 +52,7 @@ export const AdminUpdate = () => {
             const response=await fetch(`http://localhost:3000/api/admin/users/update/${params.id}`,{
                 method:"PATCH",
                 headers:{
+                    "Content-Type": "application/json",
                     Authorization:authorizationToken,
                 },
                 body:JSON.stringify(data),
