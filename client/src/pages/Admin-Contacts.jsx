@@ -9,13 +9,14 @@ const AdminContacts = () => {
     try {
       const response=await fetch(`http://localhost:3000/api/admin/contacts`,{
         method:"GET",
-        header:{
+        headers:{
           Authorization:authorizationToken,
         },
       })
       const data=await response.json();
       console.log("all contacts data:",data)
       if(response.ok){
+        console.log("contact",response)
         setContactData(data)
       }
     } catch (error) {
@@ -23,28 +24,31 @@ const AdminContacts = () => {
     }
   };
   // defining the funciton deleteContactById
-  
   useEffect(()=>{
     getContactsData()
   },[])
   return (
-    <>
-      <section className="admin-contacts-section">
+    <><section className="admin-contacts-section">
         <h1>Admin Contact Data </h1>
 
         <div className="container  admin-users">
+          {contactData.map((curContactData, index) => {
+            const { username, email, message, _id } = curContactData;
 
-              <div >
-                <p>username</p>
-                <p>email</p>
-                <p>message</p>
-                <button className="btn" >
+            return (
+              <div key={index}>
+                <p>{username}</p>
+                <p>{email}</p>
+                <p>{message}</p>
+                <button className="btn">
                   delete
                 </button>
               </div>
-            
+            );
+          })}
         </div>
       </section>
+
     </>
 
   )
