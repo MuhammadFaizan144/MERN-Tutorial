@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../store/auth'
 import { toast } from 'react-toastify'
-import { deleteContactById } from '../../../server/controllers/admin-controller'
+// import { deleteContactById } from '../../../server/controllers/admin-controller'
 
 const AdminContacts = () => {
   const[contactData,setContactData]=useState([])
@@ -35,7 +35,12 @@ const AdminContacts = () => {
           Authorization:authorizationToken,
         },
       })
-      
+      if(response.ok){
+        getContactsData()
+        toast.success("Contact deleted successfully")
+      }else{
+        toast.error("Failed to delete contact")
+      }
     } catch (error) {
       console.log(error)
     }
