@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../store/auth'
 import { toast } from 'react-toastify'
+import { deleteContactById } from '../../../server/controllers/admin-controller'
 
 const AdminContacts = () => {
   const[contactData,setContactData]=useState([])
@@ -23,7 +24,16 @@ const AdminContacts = () => {
       console.log(error)
     }
   };
+
+
   // defining the funciton deleteContactById
+  const deleteContactById=async(id)=>{
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
   useEffect(()=>{
     getContactsData()
   },[])
@@ -40,7 +50,7 @@ const AdminContacts = () => {
                 <p>{username}</p>
                 <p>{email}</p>
                 <p>{message}</p>
-                <button className="btn">
+                <button className="btn" onClick={()=>deleteContactById(_id)}>
                   delete
                 </button>
               </div>
