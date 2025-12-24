@@ -4,8 +4,11 @@ import {FaMessage} from "react-icons/fa6"
 import { Navigate, NavLink, Outlet } from 'react-router-dom'
 import { useAuth } from "../../store/auth";
 const AdminLayouts = () => {
-  const {user}=useAuth()
-  // console.log(user)
+  const {user,isloading}=useAuth()
+  console.log(user)
+  if(isloading){
+    return <h1>Loading...</h1>
+  }
   if(!user.isAdmin){
     return <Navigate to="/"/>
   }
