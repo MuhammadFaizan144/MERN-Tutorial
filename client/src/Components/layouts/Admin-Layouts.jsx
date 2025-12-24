@@ -1,8 +1,14 @@
-import React from 'react'
+
 import { FaHome, FaRegListAlt, FaUser } from "react-icons/fa";
 import {FaMessage} from "react-icons/fa6"
-import { NavLink, Outlet } from 'react-router-dom'
+import { Navigate, NavLink, Outlet } from 'react-router-dom'
+import { useAuth } from "../../store/auth";
 const AdminLayouts = () => {
+  const {user}=useAuth()
+  // console.log(user)
+  if(!user.isAdmin){
+    return <Navigate to="/"/>
+  }
   return (<>
     <header>
         <div className="container">
