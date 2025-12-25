@@ -1,7 +1,7 @@
     /* src/input.css */
-    /* @tailwind base;
+    @tailwind base;
     @tailwind components;
-    @tailwind utilities; */
+    @tailwind utilities;
 * {
   margin: 0;
   padding: 0;
@@ -91,6 +91,7 @@ button {
   padding: 1rem 2.2rem;
   font-size: 1.7rem;
   font-weight: 500;
+  color: var(--bg-color);
   background-color: var(--btn-color);
   border-radius: 0.8rem;
   -webkit-border-radius: 0.8rem;
