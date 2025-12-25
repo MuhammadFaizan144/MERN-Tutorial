@@ -7,6 +7,9 @@ export const AuthProvider=({children})=>{
     const[isloading,setIsloading]=useState(true)
     const [services, setServices] = useState([])
     const authorizationToken=`Bearer ${token}`
+
+    const API=import.meta.env.VITE_APP_URI_API;
+
     const storetokenInLS=(serverToken)=>{
         settoken(serverToken)
         return localStorage.setItem("token",serverToken)
@@ -25,7 +28,7 @@ export const AuthProvider=({children})=>{
     const userAuthentication=async()=>{
         try {
             setIsloading(true)
-            const response=await fetch("http://localhost:3000/api/auth/user",{
+            const response=await fetch(`${API}/api/auth/user`,{
                 method:"GET",
                 headers:{
                     Authorization:authorizationToken,
@@ -47,7 +50,7 @@ export const AuthProvider=({children})=>{
     //to fetch the services data from the database
     const getServices=async()=>{
         try {
-            const response=await fetch("http://localhost:3000/api/data/service",{
+            const response=await fetch(`${API}/api/data/service`,{
                 method:"GET",
             })
             if(response.ok){
@@ -67,7 +70,7 @@ export const AuthProvider=({children})=>{
     
 
     return (
-    <AuthContext.Provider value={{isLoggedIn,storetokenInLS,LogoutUser,user,services,authorizationToken,isloading}}>
+    <AuthContext.Provider value={{isLoggedIn,storetokenInLS,LogoutUser,user,services,authorizationToken,isloading,API}}>
         {children}
     </AuthContext.Provider>)
 }

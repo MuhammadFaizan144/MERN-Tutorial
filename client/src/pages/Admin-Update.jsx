@@ -12,7 +12,7 @@ export const AdminUpdate = () => {
 
     const params = useParams();
     console.log("params single user: ", params);
-    const { authorizationToken } = useAuth();
+    const { authorizationToken ,API} = useAuth();
 
     //   get single user data
     const getSingleUserData = async () => {
@@ -49,7 +49,7 @@ export const AdminUpdate = () => {
         e.preventDefault()
 
         try {
-            const response=await fetch(`http://localhost:3000/api/admin/users/update/${params.id}`,{
+            const response=await fetch(`${API}/api/admin/users/update/${params.id}`,{
                 method:"PATCH",
                 headers:{
                     "Content-Type": "application/json",

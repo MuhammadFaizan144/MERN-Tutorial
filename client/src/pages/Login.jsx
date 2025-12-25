@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../store/auth'
 import { toast } from 'react-toastify'
 // import 'react-toastify/ReactToastify.css' not necessary now
-const URL='http://localhost:3000/api/auth/login'
+const{API}=useAuth()
+const URL=`${API}/api/auth/login`
 const Login = () => {
     const[user,setUser]=useState({
       email:"",
