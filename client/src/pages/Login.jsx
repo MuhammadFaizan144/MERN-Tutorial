@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../store/auth'
 import { toast } from 'react-toastify'
 // import 'react-toastify/ReactToastify.css' not necessary now
-const{API}=useAuth()
-const URL=`${API}/api/auth/login`
 const Login = () => {
+  const {storetokenInLS,API}=useAuth()
+  
+  const URL=`${API}/api/auth/login`
     const[user,setUser]=useState({
       email:"",
       password:""
     })
     const navigate=useNavigate()
-    const {storetokenInLS}=useAuth()
 
     const handleInput=(e)=>{
       console.log(e)
