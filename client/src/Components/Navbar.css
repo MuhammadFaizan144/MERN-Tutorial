@@ -1,10 +1,142 @@
-.container{
-    max-width: 140rem;
-    padding: 4.2rem 2.4rem;
-    display: flex;
-    justify-content: space-between;
+/* Topbar / container (you already had these) */
+.container {
+  max-width: 140rem;
+  padding: 4.2rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-ul{
-    display: flex;
-    gap: 3.2rem;
+
+/* Top nav list (desktop) */
+.top-nav ul {
+  display: flex;
+  gap: 3.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+.top-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Hamburger (hidden on large screens) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Side Navbar base */
+.side-navbar {
+  position: fixed;
+  top: 0;
+  left: -320px;              /* hidden by default off-screen */
+  width: 280px;
+  height: 100vh;
+  background: #0f1724;       /* dark background */
+  color: #fff;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+  padding: 1.6rem;
+  transition: left 0.28s ease;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+}
+
+/* when open */
+.side-navbar.open {
+  left: 0;
+}
+
+/* side header (brand + close) */
+.side-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.side-header .side-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* close button */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* side nav list */
+.side-nav {
+  margin-top: 2.4rem;
+  flex: 1;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.side-nav a {
+  color: #e6f0ff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.2rem;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.0);
+  pointer-events: none;
+  transition: background 0.28s ease;
+  z-index: 1100;
+}
+
+.overlay.visible {
+  background: rgba(0,0,0,0.45);
+  pointer-events: auto;
+}
+
+/* Responsive behavior */
+/* Small screens: show hamburger, hide top nav */
+@media (max-width: 900px) {
+  .top-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Larger screens: optionally keep both available.
+   If you'd rather always show the side navbar on desktop,
+   uncomment the block below and adjust page layout to add left padding.
+*/
+/*
+@media (min-width: 1100px) {
+  .side-navbar {
+    left: 0;
+  }
+  .topbar .container {
+    padding-left: 300px; // make room for persistent sidebar
+  }
+}
+*/
