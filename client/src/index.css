@@ -424,8 +424,8 @@ a.active {
   text-align: center;
 }
 .content h2.header {
-  padding-right: 950px;
-  margin-left: -60px;
+  /* padding-right: 950px; */
+  margin-left: -90px;
   font-size: 18vw;
   line-height: 1em;
   animation: animate 10s ease-in-out infinite;
@@ -464,6 +464,7 @@ a.active {
     background-position: 0% 0%;
   }
 }
+
 .content h4 {
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -491,6 +492,57 @@ a.active {
   background: var(--btn-color);
   color: #fff;
 }
+/* -------------------- RESPONSIVENESS FIX -------------------- */
+
+/* Tablets & below */
+@media (max-width: 992px) {
+  .content h2.header {
+    /* margin-left: -90px; */
+    padding-right: 0;
+    margin-left: 0;
+    font-size: 22vw; /* keep same look but fit screen */
+    text-align: center;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+  #error-page {
+    padding: 2rem 1rem;
+  }
+
+  #error-page .content {
+    max-width: 100%;
+  }
+
+  .content h2.header {
+    padding-right: 0;
+    margin-left: 0;
+    font-size: 28vw; /* large but responsive */
+    line-height: 1;
+  }
+
+  .content h4 {
+    font-size: 1.4rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .content .btns {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .content .btns a {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
 /** ----------------------- 
 ** registration section css ** 
 ------------------------- */
