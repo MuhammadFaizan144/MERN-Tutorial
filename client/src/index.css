@@ -220,18 +220,18 @@
       .hero-content {
 
         /* spacing for paragraphs inside content */
+        
+        h1 {
+          font-size: 3.0rem;
+          margin: 0.4rem 0 1.2rem 0;
+          line-height: 1.15;
+        }
         p {
           margin: 1.6rem 0 2.4rem 0;
-
+          font-size: 1.4rem;
           &:first-child {
             margin: 0 0 1.2rem 0;
           }
-        }
-
-        h1 {
-          font-size: 2.4rem;
-          margin: 0.4rem 0 1.2rem 0;
-          line-height: 1.15;
         }
 
         /* button group */
@@ -297,11 +297,11 @@
       .section-hero {
         .hero-content {
           h1 {
-            font-size: 3.2rem;
+            font-size: 4.2rem;
           }
 
           p {
-            font-size: 1.05rem;
+            font-size: 1.55rem;
           }
         }
       }
