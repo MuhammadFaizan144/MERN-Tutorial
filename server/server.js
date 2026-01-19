@@ -20,7 +20,7 @@ app.use(cors(corsOption))
 app.use(express.json())//middleware
 
 //express router
-app.use("/api/auth",authRoute)
+app.use("/api/auth",authRoute)//Important
 app.use("/api/form",contactRoute)
 app.use("/api/data",serviceRoute)
 app.use("/api/admin",adminRoute)

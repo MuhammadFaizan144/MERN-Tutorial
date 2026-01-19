@@ -27,7 +27,7 @@ const Login = () => {
       e.preventDefault()
       console.log(user)
       try{
-        const response=await fetch(URL,{
+        const response=await fetch(`${API}/api/auth/login`,{
         
         method:"POST",
         headers:{
@@ -49,7 +49,7 @@ const Login = () => {
           setUser({email:"",password:""})
           navigate("/")
         }else{
-        toast.error(res_data.extraDetails?res_data.extraDetails:res_data.message);
+          toast.error(res_data.extraDetails?res_data.extraDetails:res_data.message);
           console.log("Error in response")
         }
       }catch(error){

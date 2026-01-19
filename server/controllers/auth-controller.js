@@ -19,7 +19,7 @@ const register=async(req,res)=>{
         return res.status(400).json({message:"email already exist"})
     }
 
-    //generate token
+    //creating user
     const userCreated=await User.create({username,email,phone,password})
 
     res.status(200).json({
